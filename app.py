@@ -1,3 +1,19 @@
+import os  
+import subprocess  
+
+# Install missing packages  
+packages = ["joblib", "xgboost", "scikit-learn", "numpy", "pandas", "streamlit"]  
+for package in packages:  
+    try:  
+        __import__(package)  
+    except ImportError:  
+        subprocess.run(["pip", "install", package])  
+
+# Now import the necessary libraries  
+import joblib  
+import numpy as np  
+import pandas as pd  
+import streamlit as st  
 import streamlit as st
 import joblib
 import numpy as np
